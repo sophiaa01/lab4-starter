@@ -6,7 +6,7 @@
  * @returns The sum of the two numbers if add is true and false otherwise.
  */
 function sumValues(num1, num2, add) {
-    if (add) {
+    if (add && Number(num1) && Number(num2)) {
         let result = 0;
 
         result = num1 + num2;
@@ -14,7 +14,7 @@ function sumValues(num1, num2, add) {
         return result;
     }
     else {
-        return add;
+        return false;
     }
 }
 
@@ -40,7 +40,7 @@ function discountPrices(prices, discount) {
         return discounted;
     }
 
-    else if (length == 0 || (typeof discount != Number)) {
+    else if (length == 0 || !Number(discount)) {
         return false;
     }
     else {
@@ -55,4 +55,4 @@ function discountPrices(prices, discount) {
 
 module.exports = {sumValues, discountPrices};
 
-// console.log(discountPrices('i\'m not an array', 0.5));
+console.log(sumValues('not a number', 5, true));
