@@ -40,7 +40,7 @@ function discountPrices(prices, discount) {
         return discounted;
     }
 
-    else if (length == 0 || !Number(discount)) {
+    else if (length == 0 || !Number(discount) || !Array.isArray(prices)) {
         return false;
     }
     else {
@@ -56,4 +56,4 @@ function discountPrices(prices, discount) {
 
 module.exports = {sumValues, discountPrices};
 
-console.log(discountPrices([10, 20, 30], 0.1));
+console.log(discountPrices('i\'m not an array', 0.5));
