@@ -47,6 +47,7 @@ function discountPrices(prices, discount) {
         for (let i = 0; i < length; i++) {
             discountedPrice += prices[i] * (1 - discount);
             discounted.push(discountedPrice);
+            discountedPrice = 0;
         }
 
         return discounted;
@@ -55,4 +56,4 @@ function discountPrices(prices, discount) {
 
 module.exports = {sumValues, discountPrices};
 
-console.log(sumValues('not a number', 5, true));
+console.log(discountPrices([10, 20, 30], 0.1));
